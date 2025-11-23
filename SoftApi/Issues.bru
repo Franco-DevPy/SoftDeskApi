@@ -1,0 +1,20 @@
+meta {
+  name: Issues
+  type: http
+  seq: 9
+}
+
+get {
+  url: http://127.0.0.1:8000/api/issues/
+  body: none
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzOTA4NDc1LCJpYXQiOjE3NjM5MDEyNzUsImp0aSI6ImExZTVkMzU2NzQzNDRjYTY5M2QwYmIwNzIyNDI2ZmU1IiwidXNlcl9pZCI6IjEifQ._vpM5pQsXorL0XsEkTfaw-cCNXAs_fPnQoGBpe4gxxk
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

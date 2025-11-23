@@ -1,0 +1,23 @@
+meta {
+  name: Obtein Token
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://127.0.0.1:8000/api/token/
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "username": "admin",
+    "password": "tototo888"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

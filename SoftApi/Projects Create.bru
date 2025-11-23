@@ -1,0 +1,29 @@
+meta {
+  name: Projects Create
+  type: http
+  seq: 6
+}
+
+post {
+  url: http://127.0.0.1:8000/api/projects/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzODUxNDYzLCJpYXQiOjE3NjM4NTA1NjMsImp0aSI6ImJjNTk1ZmViNGYzODRkYTU4Nzc2NmJhNjdmNzcyNTc3IiwidXNlcl9pZCI6IjEifQ.64PezJtr_4W2hqhxdd1LnGGtl_WiRn71E2zGBmQx2U4
+}
+
+body:json {
+  {
+    "title": "Proyecto creado desde Bruno",
+    "description": "Primer proyecto con JWT",
+    "type": "Back-end"
+  }
+  
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

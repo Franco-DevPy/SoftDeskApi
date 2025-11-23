@@ -1,0 +1,28 @@
+meta {
+  name: Contributors Create
+  type: http
+  seq: 7
+}
+
+post {
+  url: http://127.0.0.1:8000/api/contributors/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzOTA4NDc1LCJpYXQiOjE3NjM5MDEyNzUsImp0aSI6ImExZTVkMzU2NzQzNDRjYTY5M2QwYmIwNzIyNDI2ZmU1IiwidXNlcl9pZCI6IjEifQ._vpM5pQsXorL0XsEkTfaw-cCNXAs_fPnQoGBpe4gxxk
+}
+
+body:json {
+  {
+    "user": 2,
+    "project": 2,
+    "role": "CONTRIBUTOR"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
