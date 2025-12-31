@@ -9,7 +9,6 @@ from datetime import date
 
 
 def validate_age(birth_date):
-    """Valide que l’utilisateur ait au moins 15 ans."""
     if not birth_date:
         return
 
@@ -25,7 +24,6 @@ def validate_age(birth_date):
 
 
 class User(AbstractUser):
-    """Modèle utilisateur personnalisé."""
 
     REQUIRED_FIELDS = ["birth_date"]
 

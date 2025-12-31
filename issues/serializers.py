@@ -1,9 +1,10 @@
 from rest_framework import serializers
 from .models import Issue
 from projects.models import (
-    Project,
+    Project,Contributor
 )  # Importamos el modelo Project para usarlo en las validaciones
 from .models import Comment
+
 
 
 class IssueSerializer(serializers.ModelSerializer):
@@ -83,7 +84,6 @@ class CommentSerializer(serializers.ModelSerializer):
         user = self.context["request"].user
         project = value.project
 
-        from projects.models import Contributor
 
         if not Contributor.objects.filter(project=project, user=user).exists():
             raise serializers.ValidationError(
