@@ -1,6 +1,5 @@
 from rest_framework.permissions import BasePermission, SAFE_METHODS
-from projects.models import Project, Contributor
-from issues.models import Issue, Comment
+from projects.models import Project
 
 
 class IsProjectAuthorOrReadOnly(BasePermission):
