@@ -3,7 +3,7 @@ from projects.models import Project
 
 
 class IsProjectAuthorOrReadOnly(BasePermission):
-    def has_object_permission(self, request,  obj):
+    def has_object_permission(self, request, view, obj):
         
         if request.method in SAFE_METHODS:
             return True
@@ -13,7 +13,7 @@ class IsProjectAuthorOrReadOnly(BasePermission):
 class IsProjectAuthorForContributors(BasePermission):
 
 
-    def has_permission(self, request, ):
+    def has_permission(self, request, view):
         if request.method == "POST":
             project_id = request.data.get("project")
             if not project_id:
@@ -25,7 +25,7 @@ class IsProjectAuthorForContributors(BasePermission):
             return project.author == request.user
         return True
 
-    def has_object_permission(self, request, obj):
+    def has_object_permission(self, request, view, obj):
         if request.method in SAFE_METHODS:
             return True
         return obj.project.author == request.user
@@ -33,7 +33,7 @@ class IsProjectAuthorForContributors(BasePermission):
 
 class IsIssueAuthorOrProjectAuthorOrReadOnly(BasePermission):
 
-    def has_object_permission(self, request,  obj):
+    def has_object_permission(self, request, view, obj):
         if request.method in SAFE_METHODS:
             return True
 
@@ -43,7 +43,7 @@ class IsIssueAuthorOrProjectAuthorOrReadOnly(BasePermission):
 
 class IsCommentAuthorOrProjectAuthorOrReadOnly(BasePermission):
 
-    def has_object_permission(self, request, obj):
+    def has_object_permission(self, request, view, obj):
         if request.method in SAFE_METHODS:
             return True
 
